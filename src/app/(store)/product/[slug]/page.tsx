@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 
+import { AddToCartButton } from '@/components/add-to-cart-button'
 import { api } from '@/data/api'
 import { Product } from '@/data/types/product'
 
@@ -45,7 +46,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProduct(params.slug)
 
   return (
-    <div className="flex-1 max-h-[860px] grid grid-cols-3 relative">
+    <div className="flex-1 max-h-[860px] grid grid-cols-3 relative z-0">
       <div className="col-span-2 overflow-hidden">
         <Image
           src={product.image}
@@ -56,7 +57,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         />
       </div>
 
-      <div className="flex flex-col justify-center px-10">
+      <div className="flex flex-col justify-center px-10 z-10">
         <h1 className="text-3xl font-bold">{product.title}</h1>
         <p className="text-zinc-400 mt-2">{product.description}</p>
 
@@ -109,12 +110,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </div>
 
-        <button
-          type="button"
-          className="h-12 flex items-center justify-center bg-emerald-600 text-white font-semibold rounded-full mt-8"
-        >
-          Adicionar ao carrinho
-        </button>
+        <AddToCartButton productId={product.id} />
       </div>
     </div>
   )
