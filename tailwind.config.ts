@@ -12,7 +12,6 @@ const config: Config = {
         '3xl': ['2rem', '2.5rem'] /* 32px 40px */,
       },
       spacing: {
-        30: '7.5rem' /* 120px */,
         89: '22.25rem' /* 356px */,
       },
     },
