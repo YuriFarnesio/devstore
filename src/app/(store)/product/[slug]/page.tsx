@@ -1,7 +1,8 @@
-import { api } from '@/data/api'
-import { Product } from '@/data/types/product'
 import { Metadata } from 'next'
 import Image from 'next/image'
+
+import { api } from '@/data/api'
+import { Product } from '@/data/types/product'
 
 interface ProductPageProps {
   params: {
